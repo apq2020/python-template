@@ -1,0 +1,3 @@
+@echo off
+echo Creating a new Python project from your template...
+cookiecutter gh:apq2020/python_repository-

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{ cookiecutter.project_slug }}-cache-cleaner"
+version = "0.1.0"
+authors = [
+  { name="Your Name", email="you@example.com" },
+]
+description = "A command-line tool to clean Python cache directories."
+requires-python = ">=3.8"
+dependencies = [
+    "colorama>=0.4.6",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/apq2020/python-template" # 替换为你的项目主页
+
+[project.scripts]
+# 这里是关键：
+# "clean-cache" 是你希望在命令行中使用的命令
+# "app3.clean_cache:main" 指向要执行的函数
+clean-cache = "{{ cookiecutter.project_slug }}.clean_cache:main"
+
+[tool.setuptools]
+# 明确告知 setuptools 在 src 目录下查找包
+package-dir = {"" = "src"}
