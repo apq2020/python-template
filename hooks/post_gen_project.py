@@ -1,5 +1,7 @@
 import os
 import subprocess
+import shutil
+import glob
 import sys
 
 
@@ -14,6 +16,24 @@ def run_command(command, message):
         print(f"❌ Error: {e.stderr}")
         sys.exit(1)
 
+
+def cleanup_build_artifacts():
+    """Removes temporary build artifacts created by setuptools."""
+    print("🚀 Cleaning up build artifacts...")
+
+    # Remove the build directory
+    if os.path.isdir("build"):
+        print("   - Removing 'build/' directory...")
+        shutil.rmtree("build")
+
+    # Remove the .egg-info directory from src
+    # The name is dynamic, so we use a glob pattern
+    egg_info_dirs = glob.glob("src/*.egg-info")
+    for dir_path in egg_info_dirs:
+        if os.path.isdir(dir_path):
+            print(f"   - Removing '{dir_path}' directory...")
+            shutil.rmtree(dir_path)
+    print("✅ Done.")
 
 def main():
     """
@@ -50,6 +70,9 @@ def main():
             f'"{pip_executable}" install -r requirements.txt',
             "Installing dependencies from requirements.txt",
         )
+
+        # Clean up artifacts created during installation
+        cleanup_build_artifacts()
 
     print("\n🎉 Project '{{ cookiecutter.project_name }}' is ready! 🎉")
 
