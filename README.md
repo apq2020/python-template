@@ -1,10 +1,10 @@
+=======
 # Windows Python 学习型模板用法
 
 这个模板旨在帮助你快速启动新的 Python 学习项目，通过 `cookiecutter` 一条命令完成安装，并提供了一些便捷的配置。
 
 ## 安装步骤
 
-<<<<<<< HEAD
 1.  **安装 `cookiecutter`**
 
     首先，你需要安装 `cookiecutter`。打开命令提示符或 PowerShell，运行以下命令：
@@ -55,8 +55,6 @@ This template is designed to help you quickly start new Python learning projects
 
 ## Installation Steps
 
-=======
->>>>>>> a964ed9 (feat: Add MIT License)
 1.  **Install `cookiecutter`**
 
     First, you need to install `cookiecutter`. Open Command Prompt or PowerShell and run the following command:
@@ -81,17 +79,16 @@ This template is designed to help you quickly start new Python learning projects
 
 ## VS Code Usage
 
-1.  **选择 Python 解释器 (Select Python Interpreter)**
+1.  **Select Python Interpreter**
 
     -   Press `Ctrl + Shift + P` to open the command palette.
     -   Type `Python: Select Interpreter` and select it.
     -   Choose `.venv\Scripts\python.exe` in your project as the interpreter.
 
-2.  **删除虚拟环境时切换解释器 (Switch interpreter when deleting venv)**
+2.  **Switch interpreter when deleting project virtual environment**
     -   Before deleting the virtual environment, you need to switch VS Code's interpreter to the system interpreter.
     -   After deletion, switch back to the project interpreter.
 
-<<<<<<< HEAD
 3.  **Run current `python` file with one click**
     -   Press `Ctrl + Shift + P` to open the command palette.
     -   Select the `Run current file` option
@@ -100,6 +97,7 @@ This template is designed to help you quickly start new Python learning projects
     -   Press `Ctrl + Shift + P` to open the command palette.
     -   Select the `Clean Cache` option
 
-=======
->>>>>>> a964ed9 (feat: Add MIT License)
 Enjoy your Python learning journey!
+=======
+Enjoy your Python learning journey!
+
