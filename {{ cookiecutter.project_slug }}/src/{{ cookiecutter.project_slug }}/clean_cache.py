@@ -3,30 +3,25 @@ import shutil
 import sys
 from pathlib import Path
 
-<<<<<<< HEAD
 def find_project_root(marker="pyproject.toml"):
     """向上查找项目根目录（包含 .git 目录或 pyproject.toml 的地方）。"""
     current_path = Path(__file__).resolve()
     print("current_path: ", current_path)
-=======
 
 def find_project_root(marker="pyproject.toml"):
     """向上查找项目根目录（包含 .git 目录或 pyproject.toml 的地方）。"""
     current_path = Path(__file__).resolve()
->>>>>>> a964ed9 (feat: Add MIT License)
+
     for parent in current_path.parents:
         if (parent / marker).exists():
             return parent
     raise FileNotFoundError(f"Project root with '{marker}' not found.")
 
-
 # --- 配置 ---
 # 动态计算项目根目录
 PROJECT_ROOT = find_project_root()
-<<<<<<< HEAD
+
 print("PROJECT_ROOT: ", PROJECT_ROOT)
-=======
->>>>>>> a964ed9 (feat: Add MIT License)
 
 # 需要删除的目录名
 DIRS_TO_DELETE = ["__pycache__", ".pytest_cache"]
