@@ -6,11 +6,6 @@ from pathlib import Path
 def find_project_root(marker="pyproject.toml"):
     """向上查找项目根目录（包含 .git 目录或 pyproject.toml 的地方）。"""
     current_path = Path(__file__).resolve()
-    print("current_path: ", current_path)
-
-def find_project_root(marker="pyproject.toml"):
-    """向上查找项目根目录（包含 .git 目录或 pyproject.toml 的地方）。"""
-    current_path = Path(__file__).resolve()
 
     for parent in current_path.parents:
         if (parent / marker).exists():
